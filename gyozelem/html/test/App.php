@@ -10,19 +10,6 @@
 		<link rel="stylesheet" href="/test/css/index.css" type="text/css"/>
 	</head>
 	<body>
-		<!--
-		<div class="modal-layer blck_trnspnt_bg">
-			<div id="AddNews" class="window"><div class="header">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Új hír szerkesztése</b><div class="close" onclick="core.closeModalWindow('#AddNews');">&times;</div></div> 
-				<div class="content">
-					<br>Ki láthatja: <select name="cat"><option value='0'>Nyilvános</option><option value='1'>Bejelentkezet</option><option value='2'>Tag</option><option value='3'>Moderátor</option></select><br>
-					<br>Cím: <input type="text" name="Newstit" maxlength="50"><br>
-					<br>Szöveg: <br><textarea name="txt" id="txt" onKeyUp="alert(this.value);counttext();"></textarea><br><br>
-					<span class="button"> Ment </span>&nbsp;&nbsp;<span class="button" onclick="core.closeModalWindow('#AddNews');"> Mégse </span>
-				</div>
-			</div>
-		</div>
-		-->
-			
 		<div class="grid" id="App">
 			<div class="header-line">
 				<div class="burger">
@@ -49,7 +36,17 @@
 					</div>
 				</div>
 				<picture>
-				  <div class="igevers"> </div>				  
+				  <div class="igevers" 
+					data-mobil="...életét adta váltságul..."
+					data-tablet="&#8216;&#8216;...a mi betegségeinket viselte, és a mi fájdalmainkat hordozta...&#8217;&#8217;&#10; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;(Ézs 53:4)"
+					data-desktop="&#8216;&#8216; Mert a keresztről való beszéd bolondság ugyan azoknak, a kik elvesznek; de nekünk, kik megtartatunk, Istennek ereje.&#8217;&#8217;&#10; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; (1Kor 1:18)"
+					data-desktop-hd="&#8216;&#8216; De hála Istennek, aki a diadalmat adja nekünk a mi Urunk Jézus Krisztus által!&#8217;&#8217;&#10; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; (1Kor 15:57)"
+				  
+				> </div>
+<!--
+					data-desktop-hd="\2018\2018 De hála Istennek, aki a diadalmat adja nekünk a mi Urunk Jézus Krisztus által!\2019\2019\A \2003\2003\2003\2003\2003\2003\2003\2003\2003 (1Kor 15:57)"
+
+-->					
 				</picture>			
 			</header>
 			<nav>
@@ -62,7 +59,11 @@
 						<main>
 							<div class="content">
 								<div class="header">
-									<h1> </h1><br><br>
+									<h1 
+										data-welcome-short="Isten hozott"
+										data-welcome-medium="Isten hozott az oldalunkon"
+										data-welcome-long="Isten hozott a Győzelem Gyülekezet oldalán"
+									> </h1><br><br>
 									<div class="media">
 										<div class="coverFrame">
 											<div class="coverPicture"></div>
@@ -172,8 +173,22 @@
 		<div class="content"></div>
 	</div>
 	
-	<div class="cacheTrash"> sad</div>
-
+	<div class="cacheTrash"> </div>
+	
+	<!--
+	maybe i use this later with windows.css
+	<div class="modal-layer blck_trnspnt_bg">
+		<div id="AddNews" class="window"><div class="header">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Új hír szerkesztése</b><div class="close" onclick="core.closeModalWindow('#AddNews');">&times;</div></div> 
+			<div class="content">
+				<br>Ki láthatja: <select name="cat"><option value='0'>Nyilvános</option><option value='1'>Bejelentkezet</option><option value='2'>Tag</option><option value='3'>Moderátor</option></select><br>
+				<br>Cím: <input type="text" name="Newstit" maxlength="50"><br>
+				<br>Szöveg: <br><textarea name="txt" id="txt" onKeyUp="alert(this.value);counttext();"></textarea><br><br>
+				<span class="button"> Ment </span>&nbsp;&nbsp;<span class="button" onclick="core.closeModalWindow('#AddNews');"> Mégse </span>
+			</div>
+		</div>
+	</div>
+	-->
+			
 <script src="/test/js/Router.js" type="text/javascript"></script> 		
 <script src="/test/js/Ajax.js" type="text/javascript"></script> 		
 
