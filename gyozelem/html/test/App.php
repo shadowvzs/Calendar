@@ -176,10 +176,18 @@
 
 <script src="/test/js/Router.js" type="text/javascript"></script> 		
 <script src="/test/js/Ajax.js" type="text/javascript"></script> 		
-<!-- 
-<script src="../js/Router.js" type="text/javascript"></script> 		
-<script src="/js/Router.js" type="text/javascript"></script> 		-->
+
 <script type="text/javascript">
+// in future want remove App funcion from here
+// and put inside everything in App.js and use webpack for minify
+// same for css but only if most of part work
+
+// BTW about setup:
+// 1. everything must move to localhost/test
+// example: localhost/test/App.php
+// 2. apache2 url rewrie must be on
+// 3. database settinsfor mysql must set in /model/Model.php
+
 var App = function() { 
 
 	// just a debug function 
