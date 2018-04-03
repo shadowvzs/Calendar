@@ -26,7 +26,7 @@ class Gallery extends Model {
 
 	protected function index(){
 		$Auth = static::$auth;
-		$cond = $role > 0 ? ['1', '1'] : ['i.status = 1', 'a.status = 1'];
+		$cond = $Auth['role'] > 0 ? ['1', '1'] : ['i.status = 1', 'a.status = 1'];
 		//role
 		$sql = "SELECT a.id as id, a.user_id as userId, a.title as title, a.description as description, a.created as created, i.mid as imageId, i2.path as coverImage 
 			FROM albums as a
@@ -57,7 +57,7 @@ class Gallery extends Model {
 		$id = $data['id'];
 		$index = isset($data['index']) ? $data['index'] : 0;
 		$Auth = static::$auth;
-		$cond = $role > 0 ? ['1', '1'] : ['status = 1', 'i.status = 1'];
+		$cond = $Auth['role'] > 0 ? ['1', '1'] : ['status = 1', 'i.status = 1'];
 
 		$albums = static::execQuery(
 			"SELECT id, user_id as userId, title

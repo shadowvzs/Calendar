@@ -3,9 +3,9 @@
 	<head>
 		<title>JS SPA - MVC</title>
 		<meta charset="UTF-8">
-		<meta name="description" content="Free Web tutorials">
-		<meta name="keywords" content="HTML,CSS,XML,JavaScript">
-		<meta name="author" content="John Doe">
+		<meta name="description" content="Atm moment only test page for SPA">
+		<meta name="keywords" content="HTML,CSS,JavaScript,JSON,Ajax,SPA">
+		<meta name="author" content="Varga Zsolt">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="/test/css/index.css" type="text/css"/>
 	</head>
@@ -496,8 +496,7 @@ var App = function() {
 		
 		// send form data to server and wait to answer 
 		sendForm(form){
-		
-			formMethod = form.dataset.method,
+			var formMethod = form.dataset.method,
 			formAction = form.dataset.action.split('/'),
 			requestKey = formAction[0]+'_'+formAction[1],
 			param;
