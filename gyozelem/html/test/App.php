@@ -409,8 +409,6 @@ var App = function() {
 				renderFunc = packet.pop()+"Render";
 				if (!view[renderFunc]) { console.log('missing: '+renderFunc); continue; }
 				view[renderFunc](...packet);			
-				//console.log(renderFunc);
-				//console.log(packet);
 			}
 		},
 		redirectRender(url) {
@@ -418,13 +416,8 @@ var App = function() {
 			router.redirect(url);
 		},
 		templateInsertRender(data, template="", dom=this.currentPage.dom){
-			//console.log(dom);
 			if (!data || !dom) { return; }
 			if (typeof dom == "string") { dom = document.querySelector(dom); }
-			//console.log(data);
-			//console.log(template);
-			//console.log(dom);			
-			//console.log('----------');
 			var newContent = "", newItem;
 			for (row of data) {
 				newItem = template;
@@ -503,8 +496,7 @@ var App = function() {
 		
 		// send form data to server and wait to answer 
 		sendForm(form){
-			
-			var inputs = form.querySelectorAll('input, select'), 
+		
 			formMethod = form.dataset.method,
 			formAction = form.dataset.action.split('/'),
 			requestKey = formAction[0]+'_'+formAction[1],
@@ -863,7 +855,7 @@ var App = function() {
 			if (cache) {
 				title = cache.title || '';
 				
-				// if page is with mdoal we hidden then overflow scrollbar
+				// if page is with modal we hidden then overflow scrollbar
 				if (dom && dom.dataset.modal) {
 					view.global.body.classList.add("overflow-hidden");
 				}

@@ -13,6 +13,7 @@ class Gallery extends Model {
 	];
     public static $INPUT_RULE = [
 		'id' => ['type'=>'INTEGER'],
+		'index' => ['type'=>'INTEGER'],
  	];	
 	
 	//public static $AUTO_FILL = [

@@ -244,11 +244,6 @@ function Router(middleware){
 		};	
 	}
 	
-	function virtualRedirect(url=null){
-		
-		//BASE_ROOT+path().base_path
-	}
-	
 	return {
 		url() {
 			return {
