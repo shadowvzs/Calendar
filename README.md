@@ -17,6 +17,9 @@ video: https://www.youtube.com/watch?v=rrejcoh2z2c
 <font size="3">Files:</font>
 
 calendar.css - style
+
 calendar.js - calendar constructor function
+
 events.json - javascript file with json string, with events (only for example)
+
 calendar.html - html example for how to use
