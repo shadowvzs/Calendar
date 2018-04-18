@@ -38,7 +38,7 @@ class Home extends Model {
 		// i hope this make it asier to understand
 		// btw the $arg will be spread in js, so renderFun(...arg)
 		$arg = [$data, 0];
-		$renderFunc = 'simple';
+		$renderFunc = 'build';
 		return $this->sendResponse($arg, $renderFunc);
 	}
 }

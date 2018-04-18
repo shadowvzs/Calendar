@@ -65,7 +65,7 @@ function Router(middleware){
 		//['/admin/home/texco/asad', 'admin', null, false],
 		//['/admin/user/edit/:id/:name', 'admin', 1, ['NUMBER', 'SLUG']],
 		//['/admin/user/edit', 'admin', 1, false],
-		//['/user/edit', false, null, false],
+		['/event', false, null, false],
 		['/video/playlist/:id/:index', false, null, ['SLUG','NUMBER']],
 		['/video/playlist/:id', false, null, ['SLUG']],
 		['/video', false, null, false],

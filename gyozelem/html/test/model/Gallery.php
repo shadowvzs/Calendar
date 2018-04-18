@@ -41,15 +41,9 @@ class Gallery extends Model {
 				ON i2.id = i.mid
 			WHERE ".$cond[1];
 		$albums = static::execQuery($sql);
-		$template = "<div class='album-box'>
-						<a href='".static::$DIRECTORY['IMAGE']."{{id}}' title='{{title}} album: {{description}}'>
-							<img src='".static::$DIRECTORY['THUMB']."{{coverImage}}' alt='{{title}}'>
-							<p><b>{{title}}</b><br><font size='2'>({{created}})</font></p>
-						</a>
-					</div>";
-		$renderFunc = 'templateInsert';	
+		$renderFunc = 'build';	
 		$container = '.album-box-container';
-		return $this->sendResponse([$albums, $template, $container], $renderFunc);
+		return $this->sendResponse([$albums, $container], $renderFunc);
 	}
 	
 	protected function album($data=null){
@@ -87,27 +81,12 @@ class Gallery extends Model {
 		for ($i=0;$i < $len; $i++){
 			$images[$i]['index'] = $i+1;
 		} 
-		$data = [ [['title'=>$title]], $albums, $images];
-		$template = [
-					"<a title='{{title}}'>{{title}}</a>",
-					"<li><a href='".static::$DIRECTORY['IMAGE']."{{id}}' title='{{title}}'>{{title}}</a></li>",
-					"<div class='image-box'>
-						<a href='popup:image/{{index}}' title='{{description}}'>
-							<img src='".static::$DIRECTORY['THUMB']."{{path}}' alt='{{description}}'>
-						</a>
-					</div>"];
-
-		$container = ['.selected-album', '.album-link-list','.image-box-container'];
-		
+		$data = [ ['title'=>$title], $albums, $images];
 		// we send every data with a single response
 		// to multiple render function, se we can update 
 		// multiple element with 1 response
 		$multicall = [];
-		$i = 0;
-		$len = count($data);
-		for(; $i < $len; $i++) {
-			$multicall[] = [$data[$i], $template[$i], $container[$i], 'templateInsert'];
-		}
+		$multicall[] = [$data, 'build'];
 		
 		// we send images from selected album to popUp.dataList, 
 		// so don't need request for image next/previous in popUp window
@@ -116,10 +95,10 @@ class Gallery extends Model {
 		$multicall[] = ['album_'.$id, 'path','preloadImage'];
 
 		if ($index > 0) {
-			$multicall[] = ['image/'.$index, true,'popUp'];
+			$multicall[] = ['image/'.$index, true,'popUpRender'];
 		}
 	
-		return $this->sendResponse([$multicall], 'multicall');
+		return $this->sendResponse($multicall, 'multicall');
 	}	
 
 }

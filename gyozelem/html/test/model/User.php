@@ -53,7 +53,7 @@ class User extends Model {
 		$_SESSION[$hash] = $result;
 		$_SESSION['token'] = $hash;
 
-		$this->sendResponse(['/home'], 'redirect', ['Sikeres bejelentkezés!', 'success']);
+		$this->sendResponse(['/home'], 'render.redirect', ['Sikeres bejelentkezés!', 'success']);
 	}
 	
 	protected function logout($data=null){
@@ -67,7 +67,7 @@ class User extends Model {
 			'role' => 0,
 			'name' => 'Guest',
 		];		
-		$this->sendResponse(['/home'], 'redirect', 'Sikeres Kijelentkezés!');
+		$this->sendResponse(['/home'], 'render.redirect', 'Sikeres Kijelentkezés!');
 	}
 	
 	protected function add($user_data=null){

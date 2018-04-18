@@ -101,7 +101,7 @@ class Model {
 			} 
 		} 
 		
-		$_SESSION['domain'] = md5(uniqid().time()).md5(rand(0,999999).'_'.uniqid());
+		$_SESSION['domain'] = md5(uniqid().time()).md5($_SERVER['REMOTE_ADDR'].'_'.uniqid());
 				
 	}
 	
