@@ -10,7 +10,7 @@ Event Calendar with javascript, you can add/delete events to a selected day or c
 es6 compatible browser
 css3 compatible browser (used attr selector, gradient background etc)
 
-video: https://www.youtube.com/watch?v=rrejcoh2z2c
+video: https://www.youtube.com/watch?v=C60hCtUUzRk
 
 
 
